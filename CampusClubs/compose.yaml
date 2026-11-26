@@ -1,0 +1,10 @@
+# Option Docker. Lancement : docker compose up --build
+# Puis ouvrir http://localhost:8000
+services:
+  web:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./app:/code/app        # le code du poste est visible dans le conteneur
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload

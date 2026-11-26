@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block contenu %}
+<h1 class="h1">Clubs du campus</h1>
+
+<p  class="total-clubs">Il y a {{ clubs | length }} club(s) dans la liste.</p>
+
+{# TODO (partie C) : afficher chaque événement sous forme de carte.
+   Indice : {% for e in evenements %} ... {{ e.titre }} ... {% endfor %}
+   Pour la date, utilisez le filtre fourni : {{ e.debut | date_fr }} #}
+
+<section class="cartes_club">
+   {%for c in clubs%}
+    
+       <div class="carte">
+         <h2>{{c.nom}}</h2>
+         <p>{{c.description}}</p>
+         <button class="btn-voir"><a href="/clubs/{{c.id}}">Voir Details</a></button>
+       </div>
+   {%endfor%}
+</section>
+
+{% endblock %} 

@@ -1,0 +1,173 @@
+/* ==========================================================
+   AgendaCampus : feuille de style (point de départ)
+   Approche « mobile d'abord » : écrivez d'abord les règles pour
+   un petit écran, puis enrichissez avec des media queries.
+   ========================================================== */
+
+:root {
+    /* Brand colors */
+    --primary: #1E3A8A;
+    --primary-hover: #1E40AF;
+    --secondary: #4F46E5;
+    --accent: #38BDF8;
+
+    /* Backgrounds */
+    --background: #F8FAFC;
+    --surface: #FFFFFF;
+
+    /* Typography */
+    --text-primary: #1E293B;
+    --text-secondary: #64748B;
+
+    /* Status colors */
+    --success: #16A34A;
+    --danger: #DC2626;
+    --warning: #F59E0B;
+
+    /* Borders */
+    --border: #E2E8F0;
+
+    /* Effects */
+    --shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+
+    /* Border radius */
+    --radius: 12px;
+    --fond: Arial, Helvetica, sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: var(--fond);
+  line-height: 1.55;
+  color: var(--text-primary);
+  background-color: var(--background);
+}
+/*Header*/
+
+.entete{
+  background: black;
+  /* padding: 20px; */
+}
+.conteneur{
+    display: flex;
+    justify-content: space-around;
+}
+.logo{text-decoration: none; color: white;}
+.menu{
+  list-style: none;
+  display: flex;
+}
+.menu li a{
+  text-decoration: none;
+  color: var(--text-secondary);
+  margin-right: 10px;
+}
+.cartes_club{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  padding: 15px;
+}
+@media (min-width:640px){
+  .cartes_club{
+    grid-template-columns: repeat(2,1fr);
+  }
+}
+@media (min-width:960px){
+  .cartes_club{
+    grid-template-columns: repeat(3,1fr);
+  }
+}
+.carte{
+  background-color: #e9ebee;
+  padding: 10px;
+  border-radius: 8px;
+  transition: transform 0.5s;
+}
+.carte:hover{
+  transform: translateY(-5px);
+}
+.h1{
+  text-align: center;
+}
+.total-clubs{
+  text-align: center;
+  color: #8d8888;
+  font-size: 18px;
+}
+button{
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-family: var(--fond);
+    font-size: 16px;
+    border: none;
+    color: white;
+}
+.btn-voir{
+    background-color: #0e3070;
+}
+.btn-voir a{
+  text-decoration: none;
+  color: white;
+}
+/*Club details*/
+.club_details{
+   padding: 15px;
+   text-align: center;
+}
+.club-description{
+  color: #8d8888;
+}
+.club-capacity{
+  color: var(--success);
+}
+
+.btn-rejoindre{
+  background-color: #16A34A;
+}
+.btn-rejoindre a{
+  text-decoration: none;
+  color: white;
+}
+.btn-quitter{
+  background-color: #d83f19;
+}
+.btn-quitter a{
+  text-decoration: none;
+  color: white;
+}
+
+/*Form creation*/
+.creation-form{
+  width: 400px;
+  margin: auto auto;
+}
+.creation-form label{
+  font-size: 20px;
+}
+
+.creation-form input,textarea{
+   border-radius: 5px;
+   margin-bottom: 15px;
+   min-width: 400px;
+   padding-top: 20px;
+}
+.btn-creer{
+  background-color: #16A34A;
+}
+.btn-annuler{
+  background-color: #DC2626;
+}
+/*Footer*/
+footer{
+    background-color: #1e3a5f;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    font-size: 14px;
+    position: relative;
+    bottom: -200px;
+    width: 100%;
+}
