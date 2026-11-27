@@ -8,7 +8,7 @@
         <h1>{{club.nom}}</h1>
         <p class="club-description">{{club.description}}</p>
         <p class="club-capacity">{{club.capacite}} place(s) disponible</p>
-        <form action="">
+        <form action="/clubs/{{ club.id }}/adhesions" method="post">
             <button type="submit" class="btn-rejoindre"><a href="">Rejoindre</a></button>
             <button type="submit" class="btn-quitter"><a href="">quitter</a></button>
         </form>

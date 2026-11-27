@@ -8,10 +8,11 @@ from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 
 from app.config import NOM_APPLICATION
-from app.routers import pages
+from app.routers import pages,api
 
 app = FastAPI(title=NOM_APPLICATION)
 
 # Les fichiers de /app/static (CSS, JS, images) sont servis tels quels sous /static
 app.mount("/static", StaticFiles(directory="app/static"), name="static")
 app.include_router(pages.router)
+app.include_router(api.router)
